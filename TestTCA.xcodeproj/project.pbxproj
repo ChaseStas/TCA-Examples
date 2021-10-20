@@ -16,6 +16,7 @@
 		095675A82720596000D41A3F /* Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675A72720596000D41A3F /* Second.swift */; };
 		095675AA2720596600D41A3F /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675A92720596600D41A3F /* Third.swift */; };
 		095675AC2720599100D41A3F /* NavigationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675AB2720599100D41A3F /* NavigationStep.swift */; };
+		095675AF2720627800D41A3F /* BindableStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675AE2720627800D41A3F /* BindableStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		095675A72720596000D41A3F /* Second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second.swift; sourceTree = "<group>"; };
 		095675A92720596600D41A3F /* Third.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
 		095675AB2720599100D41A3F /* NavigationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStep.swift; sourceTree = "<group>"; };
+		095675AE2720627800D41A3F /* BindableStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				095675A32720594500D41A3F /* Core.swift */,
 				095675A62720595100D41A3F /* Extended */,
 				095675A52720594A00D41A3F /* 1. Navigation */,
+				095675AD2720626500D41A3F /* 2. Bindable */,
 				091108A027182186007A7B24 /* Assets.xcassets */,
 				091108A527182186007A7B24 /* Info.plist */,
 				091108A227182186007A7B24 /* Preview Content */,
@@ -97,6 +100,14 @@
 				095675A92720596600D41A3F /* Third.swift */,
 			);
 			path = Extended;
+			sourceTree = "<group>";
+		};
+		095675AD2720626500D41A3F /* 2. Bindable */ = {
+			isa = PBXGroup;
+			children = (
+				095675AE2720627800D41A3F /* BindableStep.swift */,
+			);
+			path = "2. Bindable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				091108AF2718224E007A7B24 /* First.swift in Sources */,
 				095675A82720596000D41A3F /* Second.swift in Sources */,
 				095675AC2720599100D41A3F /* NavigationStep.swift in Sources */,
+				095675AF2720627800D41A3F /* BindableStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

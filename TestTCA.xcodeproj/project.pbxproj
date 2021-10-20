@@ -13,10 +13,9 @@
 		091108AD27182216007A7B24 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 091108AC27182216007A7B24 /* ComposableArchitecture */; };
 		091108AF2718224E007A7B24 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091108AE2718224E007A7B24 /* First.swift */; };
 		095675A42720594500D41A3F /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675A32720594500D41A3F /* Core.swift */; };
-		095675A82720596000D41A3F /* Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675A72720596000D41A3F /* Second.swift */; };
-		095675AA2720596600D41A3F /* Third.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675A92720596600D41A3F /* Third.swift */; };
 		095675AC2720599100D41A3F /* NavigationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675AB2720599100D41A3F /* NavigationStep.swift */; };
 		095675AF2720627800D41A3F /* BindableStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675AE2720627800D41A3F /* BindableStep.swift */; };
+		095675BE27207FBE00D41A3F /* ListStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095675BD27207FBE00D41A3F /* ListStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +26,9 @@
 		091108A527182186007A7B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		091108AE2718224E007A7B24 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
 		095675A32720594500D41A3F /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
-		095675A72720596000D41A3F /* Second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Second.swift; sourceTree = "<group>"; };
-		095675A92720596600D41A3F /* Third.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Third.swift; sourceTree = "<group>"; };
 		095675AB2720599100D41A3F /* NavigationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStep.swift; sourceTree = "<group>"; };
 		095675AE2720627800D41A3F /* BindableStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableStep.swift; sourceTree = "<group>"; };
+		095675BD27207FBE00D41A3F /* ListStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +67,7 @@
 				095675A62720595100D41A3F /* Extended */,
 				095675A52720594A00D41A3F /* 1. Navigation */,
 				095675AD2720626500D41A3F /* 2. Bindable */,
+				095675BC27207FAB00D41A3F /* 3. List */,
 				091108A027182186007A7B24 /* Assets.xcassets */,
 				091108A527182186007A7B24 /* Info.plist */,
 				091108A227182186007A7B24 /* Preview Content */,
@@ -96,8 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				091108AE2718224E007A7B24 /* First.swift */,
-				095675A72720596000D41A3F /* Second.swift */,
-				095675A92720596600D41A3F /* Third.swift */,
 			);
 			path = Extended;
 			sourceTree = "<group>";
@@ -108,6 +105,14 @@
 				095675AE2720627800D41A3F /* BindableStep.swift */,
 			);
 			path = "2. Bindable";
+			sourceTree = "<group>";
+		};
+		095675BC27207FAB00D41A3F /* 3. List */ = {
+			isa = PBXGroup;
+			children = (
+				095675BD27207FBE00D41A3F /* ListStep.swift */,
+			);
+			path = "3. List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,11 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095675AA2720596600D41A3F /* Third.swift in Sources */,
+				095675BE27207FBE00D41A3F /* ListStep.swift in Sources */,
 				095675A42720594500D41A3F /* Core.swift in Sources */,
 				0911089D27182183007A7B24 /* TestTCAApp.swift in Sources */,
 				091108AF2718224E007A7B24 /* First.swift in Sources */,
-				095675A82720596000D41A3F /* Second.swift in Sources */,
 				095675AC2720599100D41A3F /* NavigationStep.swift in Sources */,
 				095675AF2720627800D41A3F /* BindableStep.swift in Sources */,
 			);

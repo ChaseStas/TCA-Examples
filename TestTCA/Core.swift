@@ -11,16 +11,15 @@ import SwiftUI
 struct CoreState: Equatable {
 
     var stateBindable: BindableStepState = .init()
+    var stateList: ListStepState = .init()
     var stateNavigation: NavigationStepState = .init()
-//    @BindableState var route: Route?
-//    enum Route: Equatable {
-//
-//    }
 }
 
 enum CoreAction: BindableAction, Equatable {
-    case actionNavigation(NavigationStepAction)
     case actionBindable(BindableStepAction)
+    case actionList(ListStepAction)
+    case actionNavigation(NavigationStepAction)
+
     case binding(BindingAction<CoreState>)
 }
 
@@ -49,6 +48,11 @@ let CoreReducer = Reducer<CoreState, CoreAction, CoreEnvironment>.combine(
         .pullback(
             state: \.stateBindable,
             action: /CoreAction.actionBindable,
+            environment: { _ in }),
+    ListStepReducer
+        .pullback(
+            state: \.stateList,
+            action: /CoreAction.actionList,
             environment: { _ in })
 )
 
@@ -65,6 +69,9 @@ struct CoreView: View {
                 NavigationLink("2. Bindable State&Action",
                                destination: BindableStepView(store: store.scope(state: \.stateBindable,
                                                                                   action: CoreAction.actionBindable)))
+                NavigationLink("3. List",
+                               destination: ListStepView(store: store.scope(state: \.stateList,
+                                                                                  action: CoreAction.actionList)))
             }
         }
     }

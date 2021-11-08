@@ -13,18 +13,21 @@ struct CoreState: Equatable {
     var stateBindable: BindableStepState = .init()
     var stateList: ListStepState = .init()
     var stateNavigation: NavigationStepState = .init()
+    var statePopup: PopupState = .init()
 }
 
 enum CoreAction: BindableAction, Equatable {
     case actionBindable(BindableStepAction)
     case actionList(ListStepAction)
     case actionNavigation(NavigationStepAction)
+    case actionPopup(PopupAction)
 
     case binding(BindingAction<CoreState>)
 }
 
 struct CoreEnvironment {
-    
+    let mainQueue: AnySchedulerOf<DispatchQueue>
+    let uiClient: UIClient
 }
 
 let CoreReducer = Reducer<CoreState, CoreAction, CoreEnvironment>.combine(
@@ -53,7 +56,17 @@ let CoreReducer = Reducer<CoreState, CoreAction, CoreEnvironment>.combine(
         .pullback(
             state: \.stateList,
             action: /CoreAction.actionList,
-            environment: { _ in })
+            environment: { _ in }),
+    PopupReducer
+        .pullback(
+            state: \.statePopup,
+            action: /CoreAction.actionPopup,
+            environment: {
+                .init(
+                    mainQueue: $0.mainQueue,
+                    uiClient: $0.uiClient
+                )
+            })
 )
 
 struct CoreView: View {
@@ -61,7 +74,6 @@ struct CoreView: View {
 
     var body: some View {
         WithViewStore(store) { viewStore in
-
             List {
                 NavigationLink("1. Navigation",
                                destination: NavigationStepView(store: store.scope(state: \.stateNavigation,
@@ -72,8 +84,12 @@ struct CoreView: View {
                 NavigationLink("3. List",
                                destination: ListStepView(store: store.scope(state: \.stateList,
                                                                                   action: CoreAction.actionList)))
+                NavigationLink("4. Popup",
+                               destination: PopupView(store: store.scope(state: \.statePopup,
+                                                                                  action: CoreAction.actionPopup)))
             }
         }
+
     }
 }
 
@@ -92,7 +108,7 @@ extension MockUp {
     }
 
     static func make() -> CoreEnvironment {
-        .init()
+        .init(mainQueue: .main, uiClient: .live)
     }
 }
 #endif
